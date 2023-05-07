@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2023-05-06</Date>
+  <Beta>False</Beta>
+  <Category>Cloud: Productivity: Tools:</Category>
+  <Name>t3km4n-gitea</Name>
+  <Project>https://github.com/go-gitea/gitea</Project>
+  <Overview>
+    Gitea: Git with a cup of tea - The goal of this project is to make the easiest, fastest, and most painless way of setting up a self-hosted Git service. Using Go, this can be done with an independent binary distribution across all platforms which Go supports, including Linux, macOS, and Windows on x86, amd64, ARM and PowerPC architectures. Want to try it before doing anything else? Do it with the online demo! This project has been forked from Gogs.
+  </Overview>
+    <Registry>t3km4n/deb-gitea:latest</Registry>
+  <Repository>t3km4n/deb-gitea:latest</Repository>
+  <WebUI>http://[IP]:[PORT:3001]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/gitea.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/icons/gitea.png</Icon>
+  <Privileged>true</Privileged>
+  <Network Default="bridge">bridge</Network>
+  <Config Type="Path" Name="Data Storage Path" Target="/var/lib/gitea/data" Default="/mnt/user/appdata/t3km4n-gitea" Display="always" Mode="rw" Required="true" Description="This is where gitea will store it's data."/>
+  <Config Type="Port" Name="Web Port" Target="3000" Default="3001" Mode="tcp" Display="always" Required="true" Description="This is TCP port."/>
+  <Config Type="Port" Name="Web Port" Target="2222" Default="2222" Mode="tcp" Display="always" Required="true" Description="This is SSH port."/>
+</Container>

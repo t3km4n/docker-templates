@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>t3km4n-postgres</Name>
+  <Repository>t3km4n/deb-postgres:latest</Repository>
+  <Registry>https://hub.docker.com/repository/docker/t3km4n/deb-postgres</Registry>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5432</HostPort>
+        <ContainerPort>5432</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://www.postgresql.org/</Project>
+  <Overview>
+    PostgreSQL is a powerful, open source object-relational database system. Based on official Postgres Docker image.
+  </Overview>
+  <Description>
+    PostgreSQL is a powerful, open source object-relational database system. Uses official Postgres Docker image @ https://hub.docker.com/_/postgres/
+    [br][br]
+
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]/mnt/cache/appdata/postgres[/b] This is where Postgres will store it's data.[br]
+    [b]Port 5432[/b] Default connection port[br]
+    [b]POSTGRES_PASSWORD[/b] Superuser password. [b]REQUIRED TO SET[/b], otherwise connecting outside container will not be possible.[br]
+    [b]POSTGRES_USER[/b] Username for the superuser. Defaults to postgres if not set.[br]
+    [b]POSTGRES_DB[/b] Used to define different name for default database. Defaults to user if not set.[br]
+  </Description><Category>Productivity, Tools, Network:Management</Category>
+  <WebUI>http://[IP]:[PORT:5432]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/postgres.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/icons/postgres.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Labels/>
+  <Config Name="TCP Interface Port" Target="5432" Default="5432" Mode="tcp" Description="This is Postgres TCP connection port." Type="Port" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Name="Database Storage Path" Target="/data" Default="/mnt/user/appdata/t3km4n-postgres/" Mode="rw" Description="Database Storage Path" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/t3km4n-postgres/</Config>
+  <Environment>
+    <Variable>
+      <Name>POSTGRES_USER</Name>
+      <Value>postgres</Value>
+    </Variable>
+    <Variable>
+      <Name>POSTGRES_PASSWORD</Name>
+      <Value>postgres</Value>
+    </Variable>
+    <Variable>
+      <Name>POSTGRES_DB</Name>
+      <Value>postgres</Value>
+    </Variable>
+  </Environment>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Container Variable: POSTGRES_USER" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="" Mode="" Description="Container Variable: POSTGRES_DB" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/t3km4n-postgres</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+</Container>

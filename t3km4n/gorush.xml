@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Beta>True</Beta>
+  <Category>Tools:</Category>
+  <Name>t3km4n-gorush</Name>
+  <Description></Description>
+  <Registry>https://hub.docker.com/r/appleboy/gorush/</Registry>
+  <Repository>appleboy/gorush:latest</Repository>
+  <Environment>
+    <Variable>
+      <Name>detach</Name>
+      <Value>true</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Version></Version>
+   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/gorush.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/icons/gorush.png</Icon>
+</Container>

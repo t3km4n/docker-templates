@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Beta>True</Beta>
+  <Category>Tools:</Category>
+  <Name>t3km4n-geoip</Name>
+  <Description></Description>
+  <Registry>https://hub.docker.com/r/t3km4n/deb-geoip/</Registry>
+  <Repository>t3km4n/deb-geoip:latest</Repository>
+  <Environment>
+    <Variable>
+      <Name>detach</Name>
+      <Value>true</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3000</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Version></Version>
+   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/geoip.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/t3km4n/docker-templates/main/t3km4n/icons/geoip.png</Icon>
+</Container>
