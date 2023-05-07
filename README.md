@@ -9,7 +9,7 @@ Firstly you need to be running unRAID ver 6.10.0 or later.  This also works bett
 1. Navigate to "/boot/config/plugins/dockerMan/templates" and create a new folder called "t3km4n"
 2. Git clone `git clone https://github.com/t3km4n/docker-templates` into the newly created folder
 3. Once the files are downloaded you should see them appear in the "Default templates" when creating a new docker container
-4. Git pull `git pull` to update the templates
+4. Git pull `git pull` to update the templates within the folder in step 1
 
 ___
 
